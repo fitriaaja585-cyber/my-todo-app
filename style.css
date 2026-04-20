@@ -1,10 +1,14 @@
-/* GAYA DESAIN: TEMA NEMO YANG CERIA */
+/* GAYA DESAIN: TEMA NEMO YANG CERIA (PERBAIKAN) */
 
 body {
     font-family: 'Poppins', 'Segoe UI', sans-serif;
-    /* 1. WALLPAPER NEMO (Gambar Lucu) */
-    background: url('https://w0.peakpx.com/wallpaper/559/331/HD-wallpaper-finding-nemo-finding-nemo-background.jpg') no-repeat center center fixed;
+    /* 1. WARNA CADANGAN (Biru Laut) kalau gambar gagal dimuat */
+    background-color: #0077be;
+    /* 2. WALLPAPER NEMO (Link Baru yang Stabil) */
+    background-image: url('https://w0.peakpx.com/wallpaper/559/331/HD-wallpaper-finding-nemo-finding-nemo-background.jpg');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,14 +17,12 @@ body {
 }
 
 .container {
-    /* 2. EFEK KOTAK NEMO (Oranye & Putih) */
-    background: rgba(255, 165, 0, 0.8); /* Warna Oranye Nemo (Sedikit Transparan) */
-    backdrop-filter: blur(10px); /* Efek Blur di belakang kotak */
-    -webkit-backdrop-filter: blur(10px);
+    /* 3. EFEK KOTAK NEMO (Oranye Nemo) */
+    background: #FF8C00; /* Warna Oranye Nemo Mewah (solid agar jelas) */
     border: 5px solid white; /* Garis tepi putih tebal seperti sirip Nemo */
     padding: 30px;
     border-radius: 25px; /* Sudut bulat ceria */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Bayangan lembut */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4); /* Bayangan lembut */
     width: 380px;
     color: white; /* Teks putih agar cerah */
     text-align: center;
@@ -28,7 +30,7 @@ body {
 
 .clock-section {
     margin-bottom: 25px;
-    background: rgba(255, 255, 255, 0.3); /* Kotak jam warna putih transparan */
+    background: rgba(255, 255, 255, 0.2); /* Kotak jam warna putih transparan */
     padding: 15px;
     border-radius: 15px;
 }
@@ -37,7 +39,7 @@ body {
     font-size: 45px;
     font-weight: bold;
     margin: 0;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Bayangan teks jam */
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Bayangan teks jam */
     color: white;
 }
 
@@ -70,7 +72,7 @@ input {
     flex: 1;
     padding: 12px;
     border: none;
-    background: transparent; /* Inputnya tembus pandang */
+    background: transparent;
     color: #333; /* Warna ketikan hitam agar jelas */
     outline: none;
     font-size: 14px;
@@ -88,12 +90,12 @@ button {
     border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s ease; /* Transisi halus saat di-hover */
+    transition: 0.3s ease;
 }
 
 button:hover {
-    background: #ff8c00; /* Warna oranye tua saat disentuh */
-    transform: scale(1.05); /* Membesar sedikit saat disentuh */
+    background: #ff8c00;
+    transform: scale(1.05);
 }
 
 ul {
