@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Productivity App</title>
+    <title>My Cutie Daily Planner ✨</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="clock-section">
-            <h2 id="digital-clock">00:00:00</h2>
-            <p id="date-text">Senin, 1 Januari 2026</p>
+    <div class="aesthetic-planner">
+        <div class="planner-section">
+            <h1>Daily Rencana 💖</h1>
+            <div class="cutie-input">
+                <input type="text" id="todo-input" placeholder="Tulis tugas imut kamu...">
+                <button id="add-btn">Add! ✨</button>
+            </div>
+            <ul id="todo-list"></ul>
         </div>
 
-        <h1>Daftar Tugas</h1>
-        
-        <div class="input-group">
-            <input type="text" id="todo-input" placeholder="Apa rencana hari ini?">
-            <button id="add-btn">Tambah</button>
-        </div>
+        <div class="info-section">
+            <div class="soft-card clock-card">
+                <h2 id="digital-clock">00:00</h2>
+                <p id="date-text">Senin, 20 April 2026</p>
+            </div>
 
-        <ul id="todo-list"></ul>
-
-        <div class="footer-info">
-            <small>Tetap Semangat! ✨</small>
+            <div class="soft-card note-card">
+                <h3>Note for You 🥰</h3>
+                <p id="quote">"You can do it, Girl!"</p>
+                <small>Tetap semangat! ✨🌸</small>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

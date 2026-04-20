@@ -1,163 +1,173 @@
-/* GAYA DESAIN: TEMA NEMO YANG CERIA (PERBAIKAN) */
+/* GAYA DESAIN: PINK SOFT & AESTHETIC */
 
 body {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    /* 1. WARNA CADANGAN (Biru Laut) kalau gambar gagal dimuat */
-    background-color: #0077be;
-    /* 2. WALLPAPER NEMO (Link Baru yang Stabil) */
-    background-image: url('https://w0.peakpx.com/wallpaper/559/331/HD-wallpaper-finding-nemo-finding-nemo-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif; /* Font imut */
+    /* 1. Latar Belakang Gradasi Soft Pink ke Putih */
+    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite; /* Animasi gradasi lembut */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
 }
 
-.container {
-    /* 3. EFEK KOTAK NEMO (Oranye Nemo) */
-    background: #FF8C00; /* Warna Oranye Nemo Mewah (solid agar jelas) */
-    border: 5px solid white; /* Garis tepi putih tebal seperti sirip Nemo */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.aesthetic-planner {
+    display: flex;
+    gap: 25px;
+    width: 90%;
+    max-width: 900px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+}
+
+/* AREA KIRI: PLANNER */
+.planner-section {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.9); /* Latar putih susu */
     padding: 30px;
-    border-radius: 25px; /* Sudut bulat ceria */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4); /* Bayangan lembut */
-    width: 380px;
-    color: white; /* Teks putih agar cerah */
-    text-align: center;
-}
-
-.clock-section {
-    margin-bottom: 25px;
-    background: rgba(255, 255, 255, 0.2); /* Kotak jam warna putih transparan */
-    padding: 15px;
-    border-radius: 15px;
-}
-
-#digital-clock {
-    font-size: 45px;
-    font-weight: bold;
-    margin: 0;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Bayangan teks jam */
-    color: white;
-}
-
-#date-text {
-    margin: 5px 0 0;
-    font-size: 15px;
-    color: white;
-    opacity: 0.9;
+    border-radius: 30px; /* Sangat bulat */
+    border: 3px solid #ffcae9; /* Garis pink pastel tipis */
+    color: #4a4a4a;
 }
 
 h1 {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+    color: #ff7eb9; /* Judul pink cerah */
+    text-align: center;
+    font-size: 28px;
+    margin-top: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
 }
 
-.input-group {
-    background: white; /* Kotak input warna putih bersih */
-    padding: 5px;
-    border-radius: 15px;
+.cutie-input {
     display: flex;
-    gap: 5px;
+    gap: 10px;
+    background: white;
+    padding: 8px;
+    border-radius: 20px;
+    border: 2px solid #ffcae9;
     margin-bottom: 25px;
-    border: 2px solid orange; /* Garis tepi oranye Nemo */
 }
 
 input {
     flex: 1;
-    padding: 12px;
     border: none;
-    background: transparent;
-    color: #333; /* Warna ketikan hitam agar jelas */
+    padding: 10px;
     outline: none;
     font-size: 14px;
+    color: #4a4a4a;
 }
 
-input::placeholder {
-    color: #999; /* Warna placeholder */
-}
+input::placeholder { color: #d1d1d1; }
 
 button {
-    padding: 10px 20px;
-    background: orange; /* Tombol warna oranye Nemo mencolok */
+    background: #ff7eb9; /* Tombol pink */
     color: white;
     border: none;
-    border-radius: 12px;
+    padding: 10px 20px;
+    border-radius: 15px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 button:hover {
-    background: #ff8c00;
+    background: #ffcae9; /* Pink lebih muda */
+    color: #ff7eb9;
     transform: scale(1.05);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+/* LIST TUGAS IMUT */
+ul { list-style: none; padding: 0; margin: 0; }
 
 li {
-    background: rgba(255, 255, 255, 0.2); /* List tugas transparan */
+    background: white;
     margin-bottom: 12px;
-    padding: 15px;
-    border-radius: 15px;
+    padding: 18px;
+    border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid #ffdeee;
     transition: 0.3s;
-    animation: slideIn 0.4s ease-out; /* Animasi muncul */
-    color: white;
+    color: #4a4a4a;
 }
 
 li:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: #fff0f6;
     transform: translateX(5px);
 }
 
-/* Animasi muncul */
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.done {
-    background: rgba(255, 255, 255, 0.4); /* Warna putih transparan jika selesai */
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.done .text-task {
-    text-decoration: line-through;
-    opacity: 0.7;
-    color: #eee;
-}
-
 .delete-btn {
-    color: #ffcccc;
-    font-weight: bold;
+    color: #ffcccc; /* X pink muda */
     cursor: pointer;
-    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 16px;
     transition: 0.2s;
 }
 
 .delete-btn:hover {
-    color: #ff4d4d;
-    transform: scale(1.2);
+    color: #ff7eb9; /* X pink cerah saat disentuh */
+    transform: rotate(90deg) scale(1.2);
 }
 
-.footer-info {
-    text-align: center;
-    margin-top: 25px;
-    font-style: italic;
-    font-size: 13px;
-    opacity: 0.8;
-    color: white;
+/* Fitur Coret Selesai */
+.done {
+    background: #fff;
+    opacity: 0.6;
+    border: 1px dashed #ffcae9;
 }
+
+.done .text-task {
+    text-decoration: line-through;
+    color: #ff7eb9; /* Coretan warna pink */
+}
+
+/* AREA KANAN: INFO JAM */
+.info-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.soft-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    padding: 25px;
+    border-radius: 30px;
+    border: 2px solid #ffcae9;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+#digital-clock {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    margin: 0;
+    color: #ff7eb9;
+    font-weight: 600;
+}
+
+#date-text {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+.note-card h3 {
+    font-size: 16px;
+    margin-top: 0;
+    color: #ff7eb9;
+}
+
+.note-card p { font-size: 15px; font-style: italic; margin-bottom: 5px; }
+.note-card small { font-size: 12px; opacity: 0.6; color: #ff7eb9; }
