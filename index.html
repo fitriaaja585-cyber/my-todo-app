@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikasi Daftar Tugas Saya</title>
+    <title>My Productivity App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
+        <div class="clock-section">
+            <h2 id="digital-clock">00:00:00</h2>
+            <p id="date-text">Senin, 1 Januari 2026</p>
+        </div>
+
         <h1>Daftar Tugas</h1>
+        
         <div class="input-group">
-            <input type="text" id="todo-input" placeholder="Tambah tugas baru...">
+            <input type="text" id="todo-input" placeholder="Apa rencana hari ini?">
             <button id="add-btn">Tambah</button>
         </div>
+
         <ul id="todo-list"></ul>
+
+        <div class="footer-info">
+            <small>Tetap Semangat! ✨</small>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
