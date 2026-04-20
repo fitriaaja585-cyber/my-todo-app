@@ -1,173 +1,141 @@
-/* GAYA DESAIN: PINK SOFT & AESTHETIC */
-
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif; /* Font imut */
-    /* 1. Latar Belakang Gradasi Soft Pink ke Putih */
-    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite; /* Animasi gradasi lembut */
+    font-family: 'Quicksand', sans-serif;
+    background: #e0f7f9; /* Biru toska lembut seperti gambarmu */
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 100vh;
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.aesthetic-planner {
-    display: flex;
-    gap: 25px;
-    width: 90%;
-    max-width: 900px;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-}
-
-/* AREA KIRI: PLANNER */
-.planner-section {
-    flex: 2;
-    background: rgba(255, 255, 255, 0.9); /* Latar putih susu */
-    padding: 30px;
-    border-radius: 30px; /* Sangat bulat */
-    border: 3px solid #ffcae9; /* Garis pink pastel tipis */
-    color: #4a4a4a;
-}
-
-h1 {
-    font-family: 'Poppins', sans-serif;
-    color: #ff7eb9; /* Judul pink cerah */
-    text-align: center;
-    font-size: 28px;
-    margin-top: 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
-}
-
-.cutie-input {
-    display: flex;
-    gap: 10px;
+.app-wrapper {
+    width: 100%;
+    max-width: 450px;
     background: white;
-    padding: 8px;
-    border-radius: 20px;
-    border: 2px solid #ffcae9;
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    position: relative;
 }
 
-input {
+.main-header {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 2px solid #fff0f6;
+}
+
+#digital-clock {
+    font-size: 40px;
+    color: #ff7eb9;
+    margin: 0;
+}
+
+#date-text {
+    color: #b1b1b1;
+    font-size: 14px;
+}
+
+.content-container {
+    padding: 25px;
+    flex: 1;
+    margin-bottom: 80px; /* Ruang untuk menu bawah */
+}
+
+/* TEMA PINK UNTUK SEMUA HALAMAN */
+.pink-title {
+    color: #ff7eb9;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Sembunyikan tab yang tidak aktif */
+.tab-content {
+    display: none;
+    animation: slideUp 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* INPUT & TOMBOL PINK */
+.cutie-input-group {
+    display: flex;
+    background: white;
+    border: 2px solid #ffcae9;
+    border-radius: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+input, textarea {
     flex: 1;
     border: none;
-    padding: 10px;
+    padding: 12px;
     outline: none;
-    font-size: 14px;
-    color: #4a4a4a;
+    font-family: inherit;
 }
 
-input::placeholder { color: #d1d1d1; }
+textarea {
+    width: 100%;
+    height: 200px;
+    background: #fffafa;
+    border: 2px solid #ffcae9;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
 
-button {
-    background: #ff7eb9; /* Tombol pink */
+#add-btn, .btn-pink-full {
+    background: #ff7eb9;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 15px;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* NAVIGASI BAWAH PINK */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    background: white;
+    border-top: 2px solid #fff0f6;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    color: #d1d1d1;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
     transition: 0.3s;
 }
 
-button:hover {
-    background: #ffcae9; /* Pink lebih muda */
+.nav-item.active {
     color: #ff7eb9;
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
-/* LIST TUGAS IMUT */
-ul { list-style: none; padding: 0; margin: 0; }
-
+/* List Tugas Tetap Seperti Gambar */
+ul { list-style: none; padding: 0; }
 li {
-    background: white;
-    margin-bottom: 12px;
-    padding: 18px;
-    border-radius: 20px;
+    background: #fff0f6;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 15px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border: 1px solid #ffdeee;
-    transition: 0.3s;
-    color: #4a4a4a;
 }
-
-li:hover {
-    background: #fff0f6;
-    transform: translateX(5px);
-}
-
-.delete-btn {
-    color: #ffcccc; /* X pink muda */
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.2s;
-}
-
-.delete-btn:hover {
-    color: #ff7eb9; /* X pink cerah saat disentuh */
-    transform: rotate(90deg) scale(1.2);
-}
-
-/* Fitur Coret Selesai */
-.done {
-    background: #fff;
-    opacity: 0.6;
-    border: 1px dashed #ffcae9;
-}
-
-.done .text-task {
-    text-decoration: line-through;
-    color: #ff7eb9; /* Coretan warna pink */
-}
-
-/* AREA KANAN: INFO JAM */
-.info-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.soft-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(5px);
-    padding: 25px;
-    border-radius: 30px;
-    border: 2px solid #ffcae9;
-    color: #4a4a4a;
-    text-align: center;
-}
-
-#digital-clock {
-    font-family: 'Poppins', sans-serif;
-    font-size: 38px;
-    margin: 0;
-    color: #ff7eb9;
-    font-weight: 600;
-}
-
-#date-text {
-    font-size: 14px;
-    opacity: 0.7;
-    margin-top: 5px;
-}
-
-.note-card h3 {
-    font-size: 16px;
-    margin-top: 0;
-    color: #ff7eb9;
-}
-
-.note-card p { font-size: 15px; font-style: italic; margin-bottom: 5px; }
-.note-card small { font-size: 12px; opacity: 0.6; color: #ff7eb9; }

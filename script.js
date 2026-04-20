@@ -1,71 +1,42 @@
-// Fungsi Jam Digital Aesthetic
-function updateClock() {
+// 1. UPDATE JAM
+function updateTime() {
+    const clock = document.getElementById('digital-clock');
+    const dateText = document.getElementById('date-text');
     const now = new Date();
-    const clockElement = document.getElementById('digital-clock');
-    const dateElement = document.getElementById('date-text');
-    
-    // Format Jam: Menit (tanpa detik agar lebih estetis)
-    clockElement.innerText = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }).replace('.', ':');
-    
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    dateElement.innerText = now.toLocaleDateString('id-ID', options);
+    clock.innerText = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }).replace('.', ':');
+    dateText.innerText = now.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 }
-setInterval(updateClock, 1000);
-updateClock(); // Jalankan langsung
+setInterval(updateTime, 1000);
+updateTime();
 
-// Logika Daftar Tugas
-const input = document.getElementById('todo-input');
-const addBtn = document.getElementById('add-btn');
-const todoList = document.getElementById('todo-list');
+// 2. PINDAH TAB
+function switchTab(event, tabId) {
+    // Sembunyikan semua konten
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    // Matikan semua tombol nav
+    document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+    
+    // Tampilkan yang dipilih
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
 
-// 1. Fungsi Memuat Data dari Browser
+// 3. FITUR DIARY & MOOD
+function saveDiary() {
+    const text = document.getElementById('diary-area').value;
+    localStorage.setItem('myDiary', text);
+    alert('Diary kamu sudah disimpan aman! ✨💖');
+}
+
+function setMood(mood) {
+    document.getElementById('current-mood').innerText = mood;
+    localStorage.setItem('myMood', mood);
+}
+
+// Ambil data lama saat buka web
 window.onload = () => {
-    const savedData = JSON.parse(localStorage.getItem('myTodos')) || [];
-    savedData.forEach(task => createTaskElement(task.text, task.completed));
-};
-
-// 2. Fungsi Menyimpan Data
-function saveData() {
-    const tasks = [];
-    document.querySelectorAll('li').forEach(li => {
-        tasks.push({
-            text: li.querySelector('.text-task').innerText.trim(),
-            completed: li.classList.contains('done')
-        });
-    });
-    localStorage.setItem('myTodos', JSON.stringify(tasks));
-}
-
-// 3. Fungsi Membuat Elemen Tugas Imut
-function createTaskElement(text, isCompleted = false) {
-    const li = document.createElement('li');
-    if (isCompleted) li.classList.add('done');
+    document.getElementById('diary-area').value = localStorage.getItem('myDiary') || "";
+    document.getElementById('current-mood').innerText = localStorage.getItem('myMood') || "Belum dipilih";
     
-    li.innerHTML = `
-        <span class="text-task" style="cursor:pointer">${text}</span>
-        <span class="delete-btn">X</span>
-    `;
-
-    // Klik teks untuk coret (tanda selesai pink)
-    li.querySelector('.text-task').addEventListener('click', () => {
-        li.classList.toggle('done');
-        saveData();
-    });
-
-    // Klik X untuk hapus
-    li.querySelector('.delete-btn').addEventListener('click', () => {
-        li.remove();
-        saveData();
-    });
-
-    todoList.appendChild(li);
-}
-
-// 4. Perintah Tambah Tugas Imut
-addBtn.addEventListener('click', () => {
-    if (input.value.trim() !== "") {
-        createTaskElement(input.value);
-        saveData();
-        input.value = ""; // Kosongkan input
-    }
-});
+    // Load Todo List (jika ada kode lama kamu, taruh di bawah sini)
+};

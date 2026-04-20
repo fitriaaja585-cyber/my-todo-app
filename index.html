@@ -5,31 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cutie Daily Planner ✨</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="aesthetic-planner">
-        <div class="planner-section">
-            <h1>Daily Rencana 💖</h1>
-            <div class="cutie-input">
-                <input type="text" id="todo-input" placeholder="Tulis tugas imut kamu...">
-                <button id="add-btn">Add! ✨</button>
-            </div>
-            <ul id="todo-list"></ul>
-        </div>
+    <div class="app-wrapper">
+        <header class="main-header">
+            <h2 id="digital-clock">00:00</h2>
+            <p id="date-text">Senin, 20 April 2026</p>
+        </header>
 
-        <div class="info-section">
-            <div class="soft-card clock-card">
-                <h2 id="digital-clock">00:00</h2>
-                <p id="date-text">Senin, 20 April 2026</p>
-            </div>
+        <main class="content-container">
+            <section id="tab-tugas" class="tab-content active">
+                <h1 class="pink-title">Daily Rencana 💖</h1>
+                <div class="cutie-input-group">
+                    <input type="text" id="todo-input" placeholder="Tulis tugas imutmu...">
+                    <button id="add-btn">Add! ✨</button>
+                </div>
+                <ul id="todo-list"></ul>
+            </section>
 
-            <div class="soft-card note-card">
-                <h3>Note for You 🥰</h3>
-                <p id="quote">"You can do it, Girl!"</p>
-                <small>Tetap semangat! ✨🌸</small>
-            </div>
-        </div>
+            <section id="tab-catatan" class="tab-content">
+                <h1 class="pink-title">Diary Kecil 📝</h1>
+                <textarea id="diary-area" placeholder="Ceritakan harimu di sini, cantik..."></textarea>
+                <button onclick="saveDiary()" class="btn-pink-full">Simpan Diary 🥰</button>
+            </section>
+
+            <section id="tab-mood" class="tab-content">
+                <h1 class="pink-title">How's Your Mood? ☁️</h1>
+                <div class="mood-box">
+                    <button class="mood-btn" onclick="setMood('Happy 😊')">😊 Happy</button>
+                    <button class="mood-btn" onclick="setMood('Tired 😴')">😴 Tired</button>
+                    <button class="mood-btn" onclick="setMood('Sad 😢')">😢 Sad</button>
+                </div>
+                <div class="mood-display">
+                    <p>Mood hari ini: <b id="current-mood">Belum dipilih</b></p>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <button class="nav-item active" onclick="switchTab(event, 'tab-tugas')">🎀 Tugas</button>
+            <button class="nav-item" onclick="switchTab(event, 'tab-catatan')">📝 Diary</button>
+            <button class="nav-item" onclick="switchTab(event, 'tab-mood')">✨ Mood</button>
+        </nav>
     </div>
     <script src="script.js"></script>
 </body>
