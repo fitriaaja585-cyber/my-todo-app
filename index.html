@@ -3,51 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cutie Desktop Planner ✨</title>
+    <title>My Pink Desktop Planner ✨</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="full-app-container">
-        <nav class="side-nav">
-            <div class="nav-logo">🌸</div>
-            <button class="nav-item active" onclick="switchTab(event, 'tab-tugas')">📋 Tugas</button>
-            <button class="nav-item" onclick="switchTab(event, 'tab-profil')">👤 Profil</button>
+    <div class="app-container-full">
+        <nav class="side-navbar">
+            <div class="logo">🌸</div>
+            <button class="nav-btn active" onclick="switchTab(event, 'tab-tugas')">📋 Tugas</button>
+            <button class="nav-btn" onclick="switchTab(event, 'tab-profil')">👤 Profil</button>
         </nav>
 
-        <div class="main-wrapper">
-            <header class="top-header">
-                <div class="user-info-bar">
-                    <h4 id="display-name">Nama Kamu</h4>
-                    <p id="display-class">Kelas - Jurusan</p>
+        <div class="main-content">
+            <header class="desktop-header">
+                <div class="profile-table-wrapper">
+                    <table class="user-table">
+                        <tr>
+                            <td><strong>Nama</strong></td>
+                            <td>:</td>
+                            <td id="display-name">Memuat...</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kelas</strong></td>
+                            <td>:</td>
+                            <td id="display-class">Memuat...</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="clock-bar">
+
+                <div class="clock-display">
                     <h2 id="digital-clock">00:00</h2>
                     <p id="date-text">Senin, 20 April 2026</p>
                 </div>
             </header>
 
-            <main class="view-port">
-                <section id="tab-tugas" class="tab-content active">
-                    <h1 class="page-title">Misi Sekolah Hari Ini 🎀</h1>
-                    <div class="input-box-full">
+            <main class="content-view">
+                <section id="tab-tugas" class="tab-page active">
+                    <h1 class="pink-title">Misi Sekolah Hari Ini 🎀</h1>
+                    <div class="input-section-full">
                         <input type="text" id="todo-input" placeholder="Tugas baru apa hari ini?">
                         <select id="task-category">
-                            <option value="Tugas Sekolah">🏫 Sekolah</option>
+                            <option value="Sekolah">🏫 Sekolah</option>
                             <option value="PR">🏠 PR</option>
                             <option value="Ujian">📝 Ujian</option>
                         </select>
                         <button id="add-btn">Tambah ✨</button>
                     </div>
-                    <ul id="todo-list" class="todo-grid"></ul>
+                    <ul id="todo-list" class="task-grid"></ul>
                 </section>
 
-                <section id="tab-profil" class="tab-content">
-                    <h1 class="page-title">Pengaturan Profil 👤</h1>
-                    <div class="profile-card">
-                        <input type="text" id="input-name" placeholder="Ganti Nama Kamu">
-                        <input type="text" id="input-class" placeholder="Ganti Kelas (Contoh: XI RPL 2)">
-                        <button onclick="saveProfile()" class="btn-pink-full">Simpan Perubahan ✨</button>
+                <section id="tab-profil" class="tab-page">
+                    <h1 class="pink-title">Edit Tabel Profil 👤</h1>
+                    <div class="profile-form">
+                        <label>Nama Lengkap:</label>
+                        <input type="text" id="input-name" placeholder="Masukkan nama kamu...">
+                        <label>Kelas & Jurusan:</label>
+                        <input type="text" id="input-class" placeholder="Contoh: XI RPL 1">
+                        <button onclick="saveProfile()" class="save-btn">Simpan Perubahan ✨</button>
                     </div>
                 </section>
             </main>
