@@ -1,10 +1,14 @@
-/* GAYA DESAIN: GLASSMORPHISM & FULL WALLPAPER */
+/* Hapus semua kode lama dan pakai ini */
 
 body {
-    font-family: 'Poppins', 'Segoe UI', sans-serif;
-    /* 1. WALLPAPER FULL LAYAR (Gambar Alam Mewah) */
-    background: url('https://source.unsplash.com/featured/?nature,wallpaper,morning') no-repeat center center fixed;
+    font-family: 'Poppins', sans-serif;
+    /* Kita pakai warna cadangan kalau gambar gagal dimuat */
+    background-color: #4facfe; 
+    /* Link wallpaper alam otomatis */
+    background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,142 +17,101 @@ body {
 }
 
 .container {
-    /* 2. EFEK KACA (Glassmorphism) */
-    background: rgba(255, 255, 255, 0.15); /* Transparan */
-    backdrop-filter: blur(15px); /* Efek Blur di belakang kaca */
+    /* Efek Kaca agar teks putih terbaca jelas */
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Garis tepi tipis mengkilap */
-    padding: 30px;
-    border-radius: 30px; /* Sudut sangat bulat */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Bayangan dalam agar tampak mengambang */
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     width: 380px;
-    color: white; /* Semua teks jadi putih agar kontras */
+    color: white; /* Teks jadi putih */
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
 }
 
 .clock-section {
-    margin-bottom: 25px;
-    background: rgba(0, 0, 0, 0.25); /* Kotak jam agak gelap agar jelas */
-    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 #digital-clock {
     font-size: 45px;
     font-weight: bold;
     margin: 0;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* Bayangan teks jam */
 }
 
 #date-text {
-    margin: 5px 0 0;
-    font-size: 15px;
     opacity: 0.8;
+    font-size: 14px;
 }
 
 h1 {
     font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 25px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
 }
 
 .input-group {
-    background: rgba(255, 255, 255, 0.2); /* Kotak input transparan */
-    padding: 5px;
-    border-radius: 15px;
     display: flex;
-    gap: 5px;
-    margin-bottom: 25px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 input {
     flex: 1;
     padding: 12px;
+    border-radius: 10px;
     border: none;
-    background: transparent; /* Inputnya tembus pandang */
-    color: white;
     outline: none;
-    font-size: 14px;
-}
-
-input::placeholder {
-    color: rgba(255,255,255,0.7); /* Warna placeholder */
+    background: white;
+    color: #333; /* Supaya ketikan kamu warnanya hitam dan jelas */
 }
 
 button {
     padding: 10px 20px;
-    background: #ffffff; /* Tombol warna putih mencolok */
+    background: #00f2fe;
     color: #333;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s ease; /* Transisi halus saat di-hover */
+    transition: 0.3s;
 }
 
 button:hover {
-    background: #e0e0e0;
-    transform: scale(1.05); /* Membesar sedikit saat disentuh */
+    background: white;
+    transform: scale(1.05);
 }
 
 ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 li {
-    background: rgba(255, 255, 255, 0.1); /* List tugas transparan */
-    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
     padding: 15px;
-    border-radius: 15px;
+    border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid rgba(255,255,255,0.1);
-    transition: 0.3s;
-    animation: slideIn 0.4s ease-out; /* Animasi muncul */
 }
 
-li:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(5px);
-}
-
-/* Animasi muncul */
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+.delete-btn {
+    color: #ff4d4d;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .done {
-    background: rgba(40, 167, 69, 0.2); /* Warna hijau transparan jika selesai */
-    border: 1px solid rgba(40, 167, 69, 0.3);
+    background: rgba(0, 255, 0, 0.2);
 }
 
 .done .text-task {
     text-decoration: line-through;
-    opacity: 0.6;
-}
-
-.delete-btn {
-    color: #ffcccc;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 5px 10px;
-    transition: 0.2s;
-}
-
-.delete-btn:hover {
-    color: #ff4d4d;
-    transform: scale(1.2);
-}
-
-.footer-info {
-    text-align: center;
-    margin-top: 25px;
-    font-style: italic;
-    font-size: 13px;
-    opacity: 0.7;
+    opacity: 0.5;
 }
